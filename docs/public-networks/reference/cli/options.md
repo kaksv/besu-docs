@@ -5243,16 +5243,16 @@ content if the save and restore functionality is enabled using
 The file is created on shutdown and reloaded during startup.
 The default file name is `txpool.dump` in the [data directory](#data-path).
 
-/////////////////////////////////////////////////////////////////////////////////
+
 
 ### `Maximum Time in milliseconds`
 
 
-For non PoA networks: 
+- For non PoA networks: 
 #### ` --Xblock-txs-selection-max-time`
 :Specifies the maximum time, in milliseconds, that could be spent selecting transactions to be included in the block. Must be positive and ≤ 5000
 
-For PoA networks:
+- For PoA networks:
 #### `--Xpoa-block-txs-selection-max-time`
 Specifies the percentage of the min block time as specified in the genesis, that could be spent selecting transactions to be included in the block. By default it is 75%.
 
@@ -5266,12 +5266,6 @@ Attempting to access closed worldstate
 ```
 could follow the first one, since they are related to the fact that after the timeout, a tx processing task is still running and trying to access the worldstate, but since this tx will not be selected, the warning are harmless.
 
-
-///////////////////////////////////////////////////////////////////////////////
-
-```bash
---Maximum Time in milliseconds.
-```
 
 ### `Xhelp`
 
