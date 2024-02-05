@@ -5245,49 +5245,27 @@ The default file name is `txpool.dump` in the [data directory](#data-path).
 
 /////////////////////////////////////////////////////////////////////////////////
 
-### `tx-pool-save-file`
+### `Maximum Time in milliseconds`
 
-<Tabs>
 
-<TabItem value="Syntax" label="Syntax" default>
+For non PoA networks: 
+#### ` --Xblock-txs-selection-max-time`
+:Specifies the maximum time, in milliseconds, that could be spent selecting transactions to be included in the block. Must be positive and ≤ 5000
 
-```bash
---tx-pool-save-file=<FILE>
+For PoA networks:
+#### `--Xpoa-block-txs-selection-max-time`
+Specifies the percentage of the min block time as specified in the genesis, that could be spent selecting transactions to be included in the block. By default it is 75%.
+
+In case of a timeout a similar warning is logged:
 ```
-
-</TabItem>
-
-<TabItem value="Example" label="Example">
-
-```bash
---tx-pool-save-file=/home/me/me_node/node_txpool.dump
+Interrupting transaction selection since it is taking more than the max configured time of 5000ms
 ```
-
-</TabItem>
-
-<TabItem value="Environment variable" label="Environment variable">
-
-```bash
-BESU_TX_POOL_SAVE_FILE=/home/me/me_node/node_txpool.dump
+and it is also possible for another warning saying: 
 ```
-
-</TabItem>
-
-<TabItem value="Configuration file" label="Configuration file">
-
-```bash
-tx-pool-save-file="/home/me/me_node/node_txpool.dump"
+Attempting to access closed worldstate
 ```
+could follow the first one, since they are related to the fact that after the timeout, a tx processing task is still running and trying to access the worldstate, but since this tx will not be selected, the warning are harmless.
 
-</TabItem>
-
-</Tabs>
-
-The path to the file that stores the [transaction pool's](../../concepts/transactions/pool.md)
-content if the save and restore functionality is enabled using
-[`--tx-pool-enable-save-restore`](#tx-pool-enable-save-restore).
-The file is created on shutdown and reloaded during startup.
-The default file name is `txpool.dump` in the [data directory](#data-path).
 
 ///////////////////////////////////////////////////////////////////////////////
 
