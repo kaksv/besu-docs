@@ -5243,6 +5243,58 @@ content if the save and restore functionality is enabled using
 The file is created on shutdown and reloaded during startup.
 The default file name is `txpool.dump` in the [data directory](#data-path).
 
+/////////////////////////////////////////////////////////////////////////////////
+
+### `tx-pool-save-file`
+
+<Tabs>
+
+<TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--tx-pool-save-file=<FILE>
+```
+
+</TabItem>
+
+<TabItem value="Example" label="Example">
+
+```bash
+--tx-pool-save-file=/home/me/me_node/node_txpool.dump
+```
+
+</TabItem>
+
+<TabItem value="Environment variable" label="Environment variable">
+
+```bash
+BESU_TX_POOL_SAVE_FILE=/home/me/me_node/node_txpool.dump
+```
+
+</TabItem>
+
+<TabItem value="Configuration file" label="Configuration file">
+
+```bash
+tx-pool-save-file="/home/me/me_node/node_txpool.dump"
+```
+
+</TabItem>
+
+</Tabs>
+
+The path to the file that stores the [transaction pool's](../../concepts/transactions/pool.md)
+content if the save and restore functionality is enabled using
+[`--tx-pool-enable-save-restore`](#tx-pool-enable-save-restore).
+The file is created on shutdown and reloaded during startup.
+The default file name is `txpool.dump` in the [data directory](#data-path).
+
+///////////////////////////////////////////////////////////////////////////////
+
+```bash
+--Maximum Time in milliseconds.
+```
+
 ### `Xhelp`
 
 <Tabs>
@@ -5278,6 +5330,7 @@ The displayed options are unstable and may change between releases.
 </TabItem>
 
 </Tabs>
+
 
 Prints version information and exit.
 
