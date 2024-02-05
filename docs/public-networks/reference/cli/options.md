@@ -5250,7 +5250,7 @@ The default file name is `txpool.dump` in the [data directory](#data-path).
 
 - For non PoA networks: 
 #### ` --Xblock-txs-selection-max-time`
-:Specifies the maximum time, in milliseconds, that could be spent selecting transactions to be included in the block. Must be positive and ` ≤ 5000 `
+:Specifies the maximum time, in milliseconds, that could be spent selecting transactions to be included in the block. Must be positive and ` ≤5000 `
 
 - For PoA networks:
 #### `--Xpoa-block-txs-selection-max-time`
