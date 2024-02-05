@@ -5250,10 +5250,47 @@ The default file name is `txpool.dump` in the [data directory](#data-path).
 
 - For non PoA networks: 
 #### ` --Xblock-txs-selection-max-time`
-:Specifies the maximum time, in milliseconds, that could be spent selecting transactions to be included in the block. Must be positive and ≤ 5000
+:Specifies the maximum time, in milliseconds, that could be spent selecting transactions to be included in the block. Must be positive and ` ≤ 5000 `
 
 - For PoA networks:
 #### `--Xpoa-block-txs-selection-max-time`
+
+<Tabs>
+
+<TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--Xblock-txs-selection-max-time=<INTEGER <=5000ms >
+```
+
+</TabItem>
+
+<TabItem value="Example" label="Example">
+
+```bash
+--Xblock-txs-selection-max-time=1000
+```
+
+</TabItem>
+
+<TabItem value="Environment variable" label="Environment variable">
+
+```bash
+BESU_XBLOCK_TXS_SELECTION_MAX=1000
+```
+
+</TabItem>
+
+<TabItem value="Example configuration file" label="Example configuration file"> 
+
+```bash
+Xblock-txs-selection-max-time=1000
+```
+
+</TabItem>
+
+</Tabs>
+
 Specifies the percentage of the min block time as specified in the genesis, that could be spent selecting transactions to be included in the block. By default it is 75%.
 
 In case of a timeout a similar warning is logged:
